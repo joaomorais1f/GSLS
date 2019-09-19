@@ -2,12 +2,12 @@ CREATE DATABASE gsls;
 USE gsls;
 
 CREATE TABLE usuario(
-idusuario   INT AUTO_INCREMENT,
-nome    VARCHAR(60),
-email   VARCHAR(60),
-senha   VARCHAR(60),	
-ouvinte VARCHAR(1),
-PRIMARY KEY     (idusuario)
+	idusuario   INT AUTO_INCREMENT,
+	nome    VARCHAR(60),
+	email   VARCHAR(60),
+	senha   VARCHAR(60),	
+	ouvinte VARCHAR(1),
+	PRIMARY KEY    (idusuario)
 );
 
 CREATE TABLE tipo (

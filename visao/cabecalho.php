@@ -9,30 +9,27 @@ if (isset($_SESSION['logado'])) {
 } ?>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark  fixed-top" style="background-color: #09395eff;">
     <div class="container">
-        <a class="navbar-brand" href="index.php">Guia de Sobrevivência de Língua de Sinais</a>
+        <a class="navbar-brand" href="">Guia de Sobrevivência de Língua de Sinais</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php#gsls">O que é o GSLS</a>
+                    <a class="nav-link" href="#gsls">O que é o GSLS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php#quem">Quem Somos?</a>
+                    <a class="nav-link" href="#quem">Quem Somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="temas.php">Temas</a>
+                    <a class="nav-link" href="palavra">Temas</a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="contact.php">Contato</a>
-                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="exibir.php">Exibição Teste</a>
+                    <a class="nav-link" href="">Exibição Teste</a>
                 </li>
                 <?php if (!isset($_SESSION['logado'])) { ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.php">Entre ou Cadastre-se</a>
+                    <a class="nav-link" href="login">Entre ou Cadastre-se</a>
                 </li>
                 <?php } else { ?>
                 <li class="nav-item">
@@ -42,7 +39,7 @@ if (isset($_SESSION['logado'])) {
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Conta</a>
-                            <a class="dropdown-item" href="funcoes/encerrar.sessao.usuario.php">Sair</a>
+                            <a class="dropdown-item" href="">Sair</a>
                             <!--<a class="dropdown-item" href="#">Something else here</a> -->
                         </div>
                     </div>

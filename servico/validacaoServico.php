@@ -1,0 +1,73 @@
+<?php
+require_once 'conexao.php';
+function emailexistente ($email) {
+	$comando = "SELECT email FROM usuario WHERE email = '$email'";
+	$retorno = mysqli_query($cnx = conexao(), $comando);
+	$emailexiste = mysqli_fetch_assoc($retorno);
+	return $emailexiste;
+}
+
+function validacao($nome, $email, $senha, $ouvinte){
+	$errors 		= array();	
+	$email			= strip_tags($email);
+	$nome 			= strip_tags($nome);
+	$senha 			= strip_tags($senha);
+	if (strlen(trim($nome)) <= 3) {
+		$erro = array();
+		$erro["campo"] = "nome";
+		$erro["mensagem"] = "Insira um nome";
+		$errors[] = $erro;
+	}elseif(!preg_match("/^[a-zA-ZãÃáÁàÀêÊéÉèÈíÍìÌôÔõÕóÓòÒúÚùÙûÛçÇºª' ']+$/", $nome)) {
+		$erro = array();
+		$erro["campo"] = "nome";
+		$erro["mensagem"] = "Insira um nome valido!!!";
+		$errors[] = $erro;
+	}
+	$emailValido 	= filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+	$emailexiste = emailexistente($emailValido);
+	if (!$emailValido) {
+		$erro = array();
+		$erro["campo"] = "email";
+		$erro["mensagem"] = "E-mail não valido.";
+		$errors[] = $erro;
+	} else {
+		if ($emailexiste) {
+			$erro = array();
+			$erro["campo"] = "email";
+			$erro["mensagem"] = "E-mail já cadastrado.";
+			$errors[] = $erro;
+		}
+	}
+	if(strlen(trim($senha)) == 0){
+		$erro = array();
+		$erro["campo"] = "senha";
+		$erro["mensagem"] = "Insira uma senha";
+		$errors[] = $erro; 
+	} else if(strlen($senha) > 16){
+		$erro = array();
+		$erro["campo"] = "senha";
+		$erro["mensagem"] = "Insira uma senha menor.";
+		$errors[] = $erro; 
+	} else if(strlen($senha) < 8){
+		$erro = array();
+		$erro["campo"] = "senha";
+		$erro["mensagem"] = "Insira uma senha maior.";
+		$errors[] = $erro; 
+	} 
+
+	if (strlen(trim($ouvinte)) == 0) {
+		$erro = array();
+		$erro["campo"] = "ouvinte";
+		$erro["mensagem"] = "Selecione uma opção.";
+		$errors[] = $erro;
+	}
+	return $errors;
+}
+function verificarErro($vetorErros, $campoErro) {
+	foreach ($vetorErros as $erro) {
+		if($erro["campo"] == $campoErro) {
+			return $erro["mensagem"];
+		}
+	}
+}
+?>
