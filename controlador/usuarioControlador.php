@@ -1,7 +1,8 @@
 <?php
 
 require_once "modelo/usuarioModelo.php";
-
+require './servico/validacaoServico.php';
+require './biblioteca/alert.php';
 function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
@@ -9,13 +10,21 @@ function index() {
 
 function adicionar() {
     if (ehPost()) {
-        $nome = $_POST["usuario"];
+        $nome = $_POST["nome"];
         $email = $_POST["email"];
         $senha = $_POST["senha"];
-        alert(adicionarUsuario($nome, $email, $senha));
-        redirecionar("usuario/index");
+        $ouvinte = isset($_POST["ouvinte"]) ? $_POST["ouvinte"] : null;
+        $erros = validacao($nome, $email, $senha, $ouvinte);
+        if (empty($erros)) {
+            alert(adicionarUsuario($nome, $email,$senha, $ouvinte));
+            exibir("usuario/formulario");
+        } else {
+            $dados["erros"] = $erros;
+            exibir("usuario/formulario", $dados);
+        }
     } else {
-        exibir("usuario/formulario");
+        $dados["usuarios"] = pegarTodosUsuarios();
+        exibir("usuario/formulario",$dados);
     }
 }
 

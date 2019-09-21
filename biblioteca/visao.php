@@ -23,5 +23,12 @@ function assinalarCampo($valorA, $valorB) {
         return 'selected';
     }
 }
-
+function verificarErro($vetorErros, $campoErro)
+{
+    foreach ($vetorErros as $erro) {
+        if ($erro["campo"] == $campoErro) {
+            return $erro["mensagem"];
+        }
+    }
+}
 ?>

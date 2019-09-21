@@ -1,8 +1,8 @@
 <?php
-require_once 'conexao.php';
 function emailexistente ($email) {
 	$comando = "SELECT email FROM usuario WHERE email = '$email'";
-	$retorno = mysqli_query($cnx = conexao(), $comando);
+	$retorno = mysqli_query(conn(), $comando);
+	$resultado = 
 	$emailexiste = mysqli_fetch_assoc($retorno);
 	return $emailexiste;
 }
@@ -63,11 +63,5 @@ function validacao($nome, $email, $senha, $ouvinte){
 	}
 	return $errors;
 }
-function verificarErro($vetorErros, $campoErro) {
-	foreach ($vetorErros as $erro) {
-		if($erro["campo"] == $campoErro) {
-			return $erro["mensagem"];
-		}
-	}
-}
+
 ?>

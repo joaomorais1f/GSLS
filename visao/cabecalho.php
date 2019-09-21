@@ -2,6 +2,7 @@
 <?php
 
 if (isset($_SESSION['logado'])) {
+    //session_destroy();
     $nome_completo = $_SESSION['logado']['nome'];
     $nome = explode(" ", $nome_completo);
 } else {
@@ -29,7 +30,7 @@ if (isset($_SESSION['logado'])) {
                 </li>
                 <?php if (!isset($_SESSION['logado'])) { ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="login">Entre ou Cadastre-se</a>
+                    <a class="nav-link" href="usuario/adicionar">Entre ou Cadastre-se</a>
                 </li>
                 <?php } else { ?>
                 <li class="nav-item">
@@ -39,7 +40,7 @@ if (isset($_SESSION['logado'])) {
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Conta</a>
-                            <a class="dropdown-item" href="">Sair</a>
+                            <a class="dropdown-item" href="login/logout">Sair</a>
                             <!--<a class="dropdown-item" href="#">Something else here</a> -->
                         </div>
                     </div>

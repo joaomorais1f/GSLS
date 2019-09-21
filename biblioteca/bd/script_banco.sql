@@ -33,3 +33,4 @@ CREATE TABLE palavra (
 	PRIMARY KEY (idpalavra),
 	FOREIGN KEY (idtipo) REFERENCES tipo(idtipo) 
 );
+

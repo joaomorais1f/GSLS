@@ -17,9 +17,9 @@ function pegarUsuarioPorId($id) {
     return $usuario;
 }
 
-function adicionarUsuario($nome, $email, $senha) {
-    $sql = "INSERT INTO usuario (nome, email, senha) 
-			VALUES ('$nome', '$email', '$senha')";
+function adicionarUsuario($nome, $email, $senha, $ouvinte) {
+    $sql = "INSERT INTO usuario (nome, email, senha, ouvinte) 
+			VALUES ('$nome', '$email', '$senha','$ouvinte')";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar usuário' . mysqli_error($cnx)); }
     return 'Usuario cadastrado com sucesso!';
