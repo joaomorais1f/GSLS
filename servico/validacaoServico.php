@@ -2,7 +2,6 @@
 function emailexistente ($email) {
 	$comando = "SELECT email FROM usuario WHERE email = '$email'";
 	$retorno = mysqli_query(conn(), $comando);
-	$resultado = 
 	$emailexiste = mysqli_fetch_assoc($retorno);
 	return $emailexiste;
 }
@@ -62,6 +61,27 @@ function validacao($nome, $email, $senha, $ouvinte){
 		$errors[] = $erro;
 	}
 	return $errors;
+}
+
+function ValidacaoInserirSinais ($titulobr, $tituloen, $describr, $descrien, $imagembr,$imagemen) {
+	$errors = array();
+	$titulobr = strip_tags($titulobr);
+	$tituloen = strip_tags($tituloen);
+	$describr = strip_tags($describr);
+	$descrien = strip_tags($descrien);
+
+	if (strlen($titulobr) > 0) {
+		$erro = array();
+		$erro["campo"] = "titulobr";
+		$erro["mensagem"] = "Informe um título";
+	}
+	if (strlen($titulobr) > 0) {
+		$erro = array();
+		$erro["campo"] = "tituloen";
+		$erro["mensagem"] = "Informe um título";
+	}
+	
+
 }
 
 ?>

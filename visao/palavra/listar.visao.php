@@ -1,81 +1,54 @@
-
-<?php foreach ($palavras as $palavra): ?>
-
-
-
-	tipo:<?=$palavra['idtipo']?>
-
-	<br><br>
-
-	idpalavra:<?=$palavra['idpalavra']?>
-	titulobr:<?=$palavra['titulobr']?>
-
-	<?php if($palavra['idtipo'] == 3): ?>
-		<a href="./palavra/exibir/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?></a>
-	<?php else: ?>
-		<a href="./palavra/index/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?></a>
-	<?php endif; ?>
-
-<?php endforeach; ?>
-<form method="post" action="./palavra/salvar">
-
-	titulobr:<input type="text" name="titulobr">
-	tituloen:<input type="text" name="tituloen">
-	descbr:<input type="text" name="describr">
-	descen:<input type="text" name="descrien">
-
-	<input type="number" name="idtipo" value="<?=$tipo?>">
-	<input type="number" name="idpai" value="<?=$idpai?>">
-
-	<button type="submit">vai</button>
-
-
-</form>
 <div class="container">
-	<h2 style="text-align: center;">Temas</h2>
-	<?php
-	if (empty($temas)) {
-		?>
-		<h1> NAO TEM TEMA </h1>
-
-	<?php } else { ?>
-		<h1 class="text-center"> Tema </h1>
-		<div class="row">
-			<?php for ($i = 0; $i < count($temas); $i++) {
-					?>
+	<h2 class="text-center"> Sinais</h2>
+	<div class="row">
+		<?php foreach ($palavras as $palavra): ?>
 				<div class="col-lg-4 col-sm-6 portfolio-item">
 					<div class="card h-100">
-						<a href=""><img class="card-img-top temas" src="" alt=""></a>
+						<a href="./palavra/index/<?=$palavra['idpalavra']?>">
+							<img class="card-img-top temas" src="<?=$palavra['imagembr']?>" alt="" >
+						</a>
 						<div class="card-body">
 							<h4 class="card-title">
-								<a href=""></a>
+								<?php if ($palavra['idtipo'] == 3): ?>
+									<a href="./palavra/exibir/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?> </a>
+								<?php else: ?> 
+								<a href="./palavra/index/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?></a>
+								<?php endif; ?>
 							</h4>
-							<p class="card-text"></p>
+							<p class="card-text"><?=$palavra['describr']?></p>
+							
 						</div>
 					</div>
 				</div>
-		<?php }
-		} ?>
+
+			<?php endforeach; ?>
+		</div>
 		<div class="col-lg-4 col-sm-6 portfolio-item">
-			<div class="card h-100">
+			<div class="card h-70">
 				<!--<img class="card-img-top" src="images/temas/img6.jpg" alt=""> -->
 				<div class="card-body">
-					<form action="funcoes/adicionar.tema.php" method="POST" enctype="multipart/form-data">
-						<label for="imagem_tema"> Adicionar Tema Libras: </label>
+					<form action="./palavra/salvar" method="POST" enctype="multipart/form-data">
+						<label for="imagem_tema"> Clique para inserir o Gif em LIBRAS </label>
 						<input type="file" name="imglibras" id="imagem_tema">
 						<div class="form-group">
-							<input placeholder="Nome do Tema:" class="form-control" id="nome_tema" type="text" name="temalibras">
+							<input placeholder="Título em Português (Title in Portuguese):" class="form-control" id="nome_tema" type="text" name="titulobr">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" placeholder="Descrição do Tema: " name="desclibras"></textarea>
+							<textarea class="form-control" placeholder="Descrição em Português (Description in Portuguese) " name="describr"></textarea>
 						</div>
-						<label for="imagem_tema_asl"> Adicionar Tema Asl: </label>
+						<label for="imagem_tema_asl"> Clique para inserir o Gif em ASL </label>
 						<input type="file" name="imgASL" id="imagem_tema_asl">
 						<div class="form-group">
-							<input placeholder="Nome do Tema:" class="form-control" id="nome_tema_asl" type="text" name="temaasl">
+							<input placeholder="Título em Inglês (Title in English)" class="form-control" id="nome_tema_asl" type="text" name="tituloen">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control" placeholder="Descrição do Tema: " name="descasl"></textarea>
+							<input placeholder="idtipo" class="form-control" id="idtipo" type="hidden" name="idtipo" value="<?=$tipo?>">
+						</div>
+						<div class="form-group">
+							<input placeholder="idpai:" class="form-control" id="idpai" type="hidden" name="idpai" value="<?=$idpai?>">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" placeholder="Descrição em Inglês (Description in English) " name="descrien"></textarea>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btnSubmit Adicionar_Tema"> ADICIONAR </button>
@@ -84,5 +57,5 @@
 				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 </div>

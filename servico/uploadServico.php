@@ -6,6 +6,5 @@ function uploadImagem($arquivo, $caminhoImagem = "publico/upload/imagens/") {
 
     move_uploaded_file($imagem_tmp, $caminhoImagem . $imagem);
     $diretorio_da_imagem = $caminhoImagem . $imagem;
-
     return $diretorio_da_imagem;
 }
