@@ -74,14 +74,44 @@ function ValidacaoInserirSinais ($titulobr, $tituloen, $describr, $descrien, $im
 		$erro = array();
 		$erro["campo"] = "titulobr";
 		$erro["mensagem"] = "Informe um título";
+		$errors[] = $erro;
 	}
 	if (strlen($titulobr) > 0) {
 		$erro = array();
 		$erro["campo"] = "tituloen";
 		$erro["mensagem"] = "Informe um título";
+		$errors[] = $erro;
 	}
-	
 
+	if (strlen($describr) > 0) {
+		$erro = array();
+		$erro["campo"] = "describr";
+		$erro["mensagem"] = "Informe uma descrição para seu sinal";
+		$errors[] = $erro;
+	}
+
+	if (strlen($descrien) > 0) {
+		$erro = array();
+		$erro["campo"] = "descrien";
+		$erro["mensagem"] = "Informe uma descrição para seu sinal";
+		$errors[] = $erro;
+	}
+
+	if (empty($imagembr)) {
+		$erro = array();
+		$erro["campo"] = "imagembr";
+		$erro["mensagem"] = "Submeta seu gif";
+		$errors[] = $erro;
+	} 
+
+	if (empty($imagemen)) {
+		$erro = array();
+		$erro["campo"] = "imagemen";
+		$erro["mensagem"] = "Submeta seu gif";
+		$errors[] = $erro;
+	} 
+
+	return $errors;
 }
 
 ?>

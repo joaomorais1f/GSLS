@@ -2,7 +2,7 @@
 
 require "modelo/palavraModelo.php";
 require "./servico/uploadServico.php";
-
+require './servico/validacaoServico.php';
 function index($idPai = 0) {
 	$palavras = pegarTodasAsPalavrasPorIdPai($idPai);
 	$dados['palavras'] = $palavras;
@@ -46,11 +46,17 @@ function salvar() {
 	$descrien = $_POST["descrien"];
 	$idtipo = $_POST["idtipo"];
 	$idpai = $_POST["idpai"];
-	$imagembr = uploadImagem($_FILES['imglibras']);
-	$imagemen = uploadImagem($_FILES['imgASL']);
+	$imagembr = uploadImagem($_FILES['imagembr']);
+	$imagemen = uploadImagem($_FILES['imagemen']);
 	if($idpai == 0) {
 		$idpai == null;
 	}
-	adicionarPalavra($titulobr, $tituloen, $describr, $descrien, $imagembr,$imagemen,$idpai, $idtipo);	
-	redirecionar("palavra/index");
+	$erros = ValidacaoInserirSinais($titulobr,$tituloen,$describr,$descrien,$imagembr,$imagemen);
+	if (!empty($erros) ) {
+		adicionarPalavra($titulobr, $tituloen, $describr, $descrien, $imagembr,$imagemen,$idpai, $idtipo);
+		redirecionar("palavra/index");
+	} else {
+		$dados["erros"] = $erros;
+		exibir("palavra/listar",$dados);
+	}
 }

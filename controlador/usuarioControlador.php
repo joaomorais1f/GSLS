@@ -16,7 +16,7 @@ function adicionar() {
         $ouvinte = isset($_POST["ouvinte"]) ? $_POST["ouvinte"] : null;
         $erros = validacao($nome, $email, $senha, $ouvinte);
         if (empty($erros)) {
-            alert(adicionarUsuario($nome, $email,$senha, $ouvinte));
+            alert(adicionarUsuario($nome,$email,$senha, $ouvinte));
             exibir("usuario/formulario");
         } else {
             $dados["erros"] = $erros;
