@@ -3,15 +3,13 @@
 require "modelo/palavraModelo.php";
 require "./servico/uploadServico.php";
 require './servico/validacaoServico.php';
+require_once './biblioteca/uteis.php';
 function index($idPai = 0) {
 	$palavras = pegarTodasAsPalavrasPorIdPai($idPai);
 	$dados['palavras'] = $palavras;
-
 	$tipo = null;
-
 	$palavra = pegarPalavraPorId($idPai);
-	if($palavra) {
-		//var_dump($palavra);	
+	if($palavra) {	
 		$tipo = $palavra["idtipo"] + 1;
 	} else {
 		$tipo = 1;
@@ -20,24 +18,12 @@ function index($idPai = 0) {
 	$dados['idpai'] = $idPai;
 	exibir("palavra/listar", $dados);
 }
+
 function adicionarTema() {
 	$dados["tipo"] = 1;
 	$dados["idpai"] = 0;	
 	exibir("palavra/form", $dados);
 }
-
-
-// function adicionarSubTema($idTema) {
-// 	$dados["tipo"] = 2;
-// 	$dados["idpai"] = $idTema;
-// 	exibir("palavra/form", $dados);
-// }
-
-// function adicionarFrase($idSubtema) {
-// 	$dados["tipo"] = 3;
-// 	$dados["idpai"] = $idSubtema;
-// 	exibir("palavra/form", $dados);	
-// }
 
 function salvar() {
 	$titulobr = $_POST["titulobr"];
@@ -59,4 +45,13 @@ function salvar() {
 		$dados["erros"] = $erros;
 		exibir("palavra/listar",$dados);
 	}
+}
+
+function frase ($idpai) {
+	//echo $idpai;
+	$frase = pegarTodasAsPalavrasPorIdPai($idpai);
+	$nome_subtema = pegarPalavraPorId($idpai);
+	$dados['nome_subtema'] = $nome_subtema;
+	$dados["frases"] = $frase;
+	exibir("palavra/frases",$dados);
 }

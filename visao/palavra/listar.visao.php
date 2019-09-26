@@ -11,7 +11,7 @@
 					<div class="card-body">
 						<h4 class="card-title">
 							<?php if ($palavra['idtipo'] == 3): ?>
-								<a href="./palavra/exibir/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?> </a>
+								<a href="./palavra/frase/<?=$palavra['idpai']?>"><?=$palavra['titulobr']?> </a>
 								<?php else: ?> 
 									<a href="./palavra/index/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?></a>
 								<?php endif; ?>
