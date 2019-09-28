@@ -80,3 +80,7 @@ input[type="file"] {
     max-height: 300px;
 }
 
+.pause-icon {
+    height:45px;
+    width:45px;
+}

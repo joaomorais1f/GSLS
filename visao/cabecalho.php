@@ -23,10 +23,7 @@ if (isset($_SESSION['logado'])) {
                     <a class="nav-link" href="#quem">Quem Somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="palavra">Temas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Exibição Teste</a>
+                    <a class="nav-link" href="palavra">Sinais</a>
                 </li>
                 <?php if (!isset($_SESSION['logado'])) { ?>
                 <li class="nav-item">
