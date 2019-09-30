@@ -55,3 +55,8 @@ function frase ($idpai) {
 	$dados["frases"] = $frase;
 	exibir("palavra/frases",$dados);
 }
+
+function delete ($idpalavra) {
+	deletarPalavra($idpalavra);
+	redirecionar('palavra/index');
+}

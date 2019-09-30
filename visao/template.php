@@ -15,14 +15,12 @@
     <!-- <link rel="stylesheet" href="netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"> -->
 </head>
 
-<body>
+<body class="d-flex flex-column">
     <?php require 'cabecalho.php'; ?>
-    <main class="">
+    <main class="" id="page-content">
         <?php require $viewFilePath; ?>
     </main>
-
     <?php require 'rodape.php'; ?>
-
 
     <script src="./publico/js/jquery.min.js"></script>
     <script src="./publico/js/bootstrap.bundle.min.js"></script>

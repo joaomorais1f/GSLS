@@ -84,3 +84,29 @@ input[type="file"] {
     height:45px;
     width:45px;
 }
+
+.footer {
+    background-color: #09395eff
+}
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
+.delete {
+    position: absolute;
+    top: 5px;
+    right:5px;
+    z-index:200;
+    transition: all 0.4s ease;
+}
+
+.delete:hover {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.7);
+    transition: all 0.4s ease;
+}

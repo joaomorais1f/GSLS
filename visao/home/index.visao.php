@@ -8,22 +8,22 @@
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" style="background-image: url('./publico/images/mapas.png')">
           <div class="carousel-caption d-none d-md-block">
-            <a href="temas.php">
+            <a href="palavra">
               <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('./publico/images/a.png')">
           <div class="carousel-caption d-none d-md-block">
-            <a href="temas.php">
-              <h3> <button class="btn btn-success">COMECE A APRENDER</button></h3>
+            <a href="palavra">
+              <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('./publico/images/pepe.jpg')">
           <div class="carousel-caption d-none d-md-block">
-            <a href="temas.php">
-              <h3> <button class="btn btn-success">COMECE A APRENDER</button></h3>
+            <a href="palavra">
+              <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
           </div>
         </div>
@@ -106,7 +106,7 @@
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <img class="img-fluid rounded mb-4 col-md-auto"  src="./publico/images/img-01.png" alt="logo do projeto">
+            <img class="img-fluid rounded mb-4 col-md-auto" src="./publico/images/img-01.png" alt="logo do projeto">
           </div>
           <div class="col-lg-6">
             <h2 class="text-center" id="quem">Quem Somos?</h2>

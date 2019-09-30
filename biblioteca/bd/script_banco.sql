@@ -7,8 +7,11 @@ CREATE TABLE usuario(
 	email   VARCHAR(60),
 	senha   VARCHAR(60),	
 	ouvinte VARCHAR(1),
+	tipo 	VARCHAR(10),
 	PRIMARY KEY    (idusuario)
 );
+ INSERT INTO usuario (idusuario,nome,email,senha,ouvinte,tipo)
+ VALUES ('1','administrador','admin@admin.com','administrador123','s','admin');
 
 CREATE TABLE tipo (
 	idtipo INT AUTO_INCREMENT,

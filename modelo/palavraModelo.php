@@ -84,3 +84,12 @@ function pegarTodasAsPalavrasPorIdTipo($idTipo) {
     }
     return $palavras;
 }
+
+function deletarPalavra($idpalavra) {
+    $sql = "DELETE FROM palavra WHERE idpalavra = '$idpalavra'";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if (!$resultado) {
+        die('Erro ao deletar o sinal'. mysqli_error($cnx));
+    }
+    return 'Sinal deletado com sucesso';
+}
