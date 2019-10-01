@@ -1,11 +1,14 @@
  <div class="container">
-  <br>
+  
+  <!--
   <div class="row">
   </div>
   <div class="row">
+
     <div class="col-md-8 tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-      <img class="img-fluid" width="750" height="500" src="<?=$frases[0]['imagembr']?>" alt="">
+      <img class="img-fluid" width="750" height="500" src="<?=$palavra['imagembr']?>" alt="">
     </div> 
+
       <div class="col-3">
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
           <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><img src="./publico/images/brasil.png" alt="libras_opção"></a>
@@ -13,17 +16,57 @@
         </div>
       </div>
     </div>
-<!--     <div class="col-9">
+
+   <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">cliquei no perfil</div>
       </div>
-    </div> -->
-    <h3 class="my-4 text-center">Frases do subtema: <?=ucfirst($nome_subtema['titulobr'])?></h3>
+    </div> 
+   
+-->
+
+<div class="row">
+  <div class="col-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+        
+        <img src="./publico/images/brasil.png" alt="libras_opção">
+
+
+      </a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+        
+        <img height="188" width="268" src="./publico/images/eua.png">
+
+      </a>
+    </div>
+  </div>
+  <div class="col-9">
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+        <img class="img-fluid" width="750" height="500" src="<?=$palavra['imagembr']?>" alt="">
+
+      </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+
+        <img class="img-fluid" width="750" height="500" src="<?=$palavra['imagemen']?>" alt="">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <h3 class="my-4 text-center">Frases do subtema: <?=ucfirst($palavraPai['titulobr'])?></h3>
     <div class="row">
-      <?php foreach ($frases as $frase) : ?>
+      <?php foreach ($palavrasDoMesmoTema as $frase) : ?>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="#">
+          <a href="./palavra/frase/<?= $frase['idpalavra'] ?>">
             <img class="img-fluid" width="500" height="300" src="<?=$frase['imagembr']?>" alt="">
             <figcaption class="text-center"><?=$frase['titulobr']?></figcaption>
           </a>

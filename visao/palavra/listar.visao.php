@@ -1,15 +1,3 @@
-<script>
-	new Freezeframe();
-
-	function comece() {
-		return manual.start();
-	}
-
-	function pausar() {
-		return manual.stop();
-	}
-</script>
-
 
 <div class="container">
 	<h2 class="text-center"> Sinais</h2>
@@ -19,13 +7,13 @@
 			<?php foreach ($palavras as $palavra) : ?>
 				<div class="col-lg-4 col-sm-6 portfolio-item">
 					<div class="card h-100">
-						<img class="card-img-top temas" onclick="comece()" id="sinal" src="<?= $palavra['imagembr'] ?>" alt="sinal_<?= $palavra['titulobr'] ?>">
+						<img class="card-img-top temas"  id="sinal" src="<?= $palavra['imagembr'] ?>" alt="sinal_<?= $palavra['titulobr'] ?>">
 						<a href="palavra/delete/<?= $palavra['idpalavra'] ?>"> <img src="./publico/images/x-button.svg" class="pause-icon delete"></a>
-						<span><img class="pause-icon" onclick="pausar()" src="./publico/images/pause-button.svg"></span>
+						<!-- <span><img class="pause-icon" src="./publico/images/pause-button.svg"></span> -->
 						<div class="card-body">
 							<h4 class="card-title">
 								<?php if ($palavra['idtipo'] == 3) : ?>
-									<a href="./palavra/frase/<?= $palavra['idpai'] ?>"><?= $palavra['titulobr'] ?> </a>
+									<a href="./palavra/frase/<?= $palavra['idpalavra'] ?>"><?= $palavra['titulobr'] ?> </a>
 								<?php else : ?>
 									<a href="./palavra/index/<?= $palavra['idpalavra'] ?>"><?= $palavra['titulobr'] ?></a>
 								<?php endif; ?>
