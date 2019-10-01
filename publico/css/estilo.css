@@ -111,7 +111,12 @@ input[type="file"] {
     transition: all 0.4s ease;
 }
 
-img.gif {
+.exibir {
+  width:750px;
+  height:500px;
+}
+
+/*img.gif {
   visibility: hidden;
 }
 
@@ -147,7 +152,6 @@ img.gif {
   border-radius: 50px;
 }
 .gifcontrol.playing {
-  /* Only show the 'stop' button on hover */
 }
 .gifcontrol.playing:after {
   opacity: 0;
@@ -170,4 +174,5 @@ img.gif {
   border-style: solid;
   border-width: 25px 0 25px 50px;
   border-color: transparent transparent transparent #ff9900;
-}
+}*/
+

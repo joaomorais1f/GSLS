@@ -26,7 +26,7 @@
     <script src="./publico/js/bootstrap.bundle.min.js"></script>
     <script src="./publico/js/scroll.js"> </script>
 <!--     <script src="./publico/js/freezeframe.min.js"></script> -->
-    <script src="./publico/js/pausegif.js"> </script>
+<!--     <script src="./publico/js/pausegif.js"> </script> -->
 </body>
 
 </html>

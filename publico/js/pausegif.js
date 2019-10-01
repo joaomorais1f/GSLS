@@ -861,7 +861,6 @@
             toolbar = document.createElement('div');
 
             tmpCanvas = document.createElement('canvas');
-
             div.width = canvas.width = gif.width;
             div.height = canvas.height = gif.height;
             toolbar.style.minWidth = gif.width + 'px';
