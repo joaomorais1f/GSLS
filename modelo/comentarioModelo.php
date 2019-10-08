@@ -27,10 +27,7 @@ function ExcluirComentarioPorId ($idcomentario) {
 
 function PegarComentarioPorId ($idcomentario) {
 	$sql = "SELECT * FROM comentario WHERE idcomentario = '$idcomentario'";
-	$resultado = mysqli_query($cnx = conn(), $sql);
-    $comentarios = array();
-    while ($linha = mysqli_fetch_assoc($resultado)) {
-        $comentarios[] = $linha;
-    }
-    return $comentarios;
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    $comentario = mysqli_fetch_assoc($resultado);
+    return $comentario;
 }

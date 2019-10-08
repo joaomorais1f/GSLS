@@ -92,8 +92,7 @@ function comentario () {
 
 function ExcluirComentario ($idcomentario) {
 	$todos_comentarios_por_id = PegarComentarioPorId($idcomentario);
-	$comentario_palavra = pegarComentarioPorIdPalavra($todos_comentarios_por_id[0]['idpalavra']);
-	mm($todos_comentarios_por_id);
+
 	$palavra = pegarPalavraPorId($todos_comentarios_por_id['idpalavra']);
 	$idpai = $palavra["idpai"];
 	$palavrasDoMesmoTema = pegarTodasAsPalavrasPorIdPai($idpai);
@@ -102,7 +101,8 @@ function ExcluirComentario ($idcomentario) {
 
 	$palavraPai = pegarPalavraPorId($idpai);
 	$dados['palavraPai'] = $palavraPai;
-	$dados["comentarios"] = $comentario_palavra;
 	$comentarios = ExcluirComentarioPorId($idcomentario);
+	$comentario_palavra = pegarComentarioPorIdPalavra($todos_comentarios_por_id['idpalavra']);
+	$dados["comentarios"] = $comentario_palavra;
 	exibir("palavra/frases",$dados);	
 }
