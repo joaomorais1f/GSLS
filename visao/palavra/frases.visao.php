@@ -3,30 +3,29 @@
 
 
 <div class="row m-2">
-  <div class="col-9">
+  <div class="col-lg-9 col-md-10">
     <div class="tab-content" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
-      <img class="img-fluid" width="750" height="500" src="<?=$palavra['imagembr']?>" alt="">
+      <img class="img-fluid" width="750" height="500" data-gifffer="<?=$palavra['imagembr']?>" alt="">
 
     <h3 class="my-4 text-center">Frases do subtema: <?=ucfirst($palavraPai['titulobr'])?></h3>
       <?php foreach ($palavrasDoMesmoTema as $frase) : ?>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="./palavra/frase/<?= $frase['idpalavra'] ?>">
-            <img class="img-fluid" width="500" height="300" src="<?=$frase['imagembr']?>" alt="">
+            <img class="img-fluid" width="500" height="300" data-gifffer="<?=$frase['imagembr']?>" alt="">
+            <a href="./palavra/frase/<?=$frase['idpalavra'] ?>">
             <figcaption class="text-center"><?=$frase['titulobr']?></figcaption>
           </a>
         </div>
       <?php endforeach; ?>
       </div>
       <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-
-        <img class="img-fluid exibir" width="750" height="500" src="<?=$palavra['imagemen']?>" alt="">
+        <img class="img-fluid exibir" width="750" height="500" data-gifffer="<?=$palavra['imagemen']?>" alt="">
     <h3 class="my-4 text-center">Frases do subtema: <?=ucfirst($palavraPai['tituloen'])?></h3>
       <?php foreach ($palavrasDoMesmoTema as $frase) : ?>
         <div class="col-md-3 col-sm-6 mb-4">
-          <a href="./palavra/frase/<?= $frase['idpalavra'] ?>">
-            <img class="img-fluid" width="500" height="300" src="<?=$frase['imagemen']?>" alt="">
+            <img class="img-fluid" width="500" height="100" data-gifffer="<?=$frase['imagemen']?>" alt="">
+            <a href="./palavra/frase/<?= $frase['idpalavra'] ?>">
             <figcaption class="text-center"><?=$frase['tituloen']?></figcaption>
           </a>
         </div>
@@ -34,7 +33,7 @@
       </div>
     </div>
   </div>
-    <div class="col-3">
+    <div class="col-lg-3 col-md-2">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
         
@@ -55,7 +54,7 @@
     <h2 class="text-center">Comentários </h2>
     <div class="card">
       <div class="card-body">
-        <?php for ($i = 0; $i < 3; $i++) { ?>
+        <?php foreach ($comentarios as $comentario): ?>
           <div class="row">
             <div class="col-md-2">
               <img src="./publico/images/avatar.jpg" class="img img-rounded img-fluid">
@@ -63,21 +62,23 @@
             </div>
             <div class="col-md-10">
               <p>
-                <a class="float-left"><strong>Nome do Usuário</strong></a>
+                <a class="float-left"><strong><?=$comentario['idcomentario']?></strong></a>
                 <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                 <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                 <span class="float-right"><i class="text-warning fa fa-star"></i></span>
                 <span class="float-right"><i class="text-warning fa fa-star"></i></span>
               </p>
               <div class="clearfix"></div>
-              <p>Comentário do usuário.</p>
+
+              <p><?=$comentario['comentario']?></p>
+              <a href="palavra/ExcluirComentario/<?=$comentario['idcomentario']?>"> Excluir Comentario </a>
             <!-- <p>
               <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
               <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
             </p> -->
           </div>
         </div>
-      <?php } ?>
+      <?php endforeach; ?>
     </div>
   </div>
 </div>
@@ -85,9 +86,9 @@
     ?>
     <div class="container">
       <h2 class="text-center"> Envie-nos um comentário </h2>
-      <form class="form-horizontal" role="form" action="funcoes/adicionar.comentario.php" method="POST">
+      <form class="form-horizontal" role="form" action="palavra/comentario/" method="POST">
         <div class="form-group">
-          <input type="hidden" name="idfrase" value="5">
+          <input type="text" name="idpalavra" value="<?=$palavra['idpalavra']?>">
           <label for="message" class="col-sm-2 control-label">Mensagem</label>
           <div class="col-sm-10">
             <textarea class="form-control" rows="4" maxlength="500" name="comentario" placeholder="Máximo 500 caracteres..."></textarea>

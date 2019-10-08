@@ -15,14 +15,14 @@
     <!-- <link rel="stylesheet" href="netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"> -->
 </head>
 
-<body class="d-flex flex-column">
+<body class="d-flex flex-column" id="teste">
     <?php require 'cabecalho.php'; ?>
     <main class="" id="page-content">
         <?php require $viewFilePath; ?>
     </main>
     <?php require 'rodape.php'; ?>
 
-    <script src="./publico/js/jquery-3.4.1.min.js"></script>
+    <script src="./publico/js/jquery.min.js"></script>
     <script src="./publico/js/bootstrap.bundle.min.js"></script>
     <script src="./publico/js/scroll.js"> </script>
     <script src="./publico/js/gifffer.min.js"> </script>
@@ -31,7 +31,7 @@
 window.onload = function() {
   Gifffer();
 }
-    </script>
+</script>
     
 </body>
 

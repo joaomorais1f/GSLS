@@ -7,7 +7,7 @@
     position: relative;
     margin-left: -41.5%;
 
-}
+} 
 .login-logo img{
     position: absolute;
     width: 20%;
@@ -78,7 +78,7 @@ input[type="file"] {
 .temas {
     min-height: 300px;
     max-height: 300px;
-
+}
 .pause-icon {
     height:45px;
     width:45px;

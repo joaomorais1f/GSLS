@@ -1,3 +1,30 @@
+    <script>
+    window.onload = function() {
+                Gifffer({
+                  playButtonStyles: {
+                    'width': '60px',
+                    'height': '60px',
+                    'border-radius': '30px',
+                    'background': 'rgba(0, 0, 0, 0.3)',
+                    'position': 'absolute',
+                    'top': '50%',
+                    'left': '50%',
+                    'margin': '-30px 0 0 -30px'
+                  },
+                  playButtonIconStyles: {
+                    'width': '0',
+                    'height': '0',
+                    'border-top': '14px solid transparent',
+                    'border-bottom': '14px solid transparent',
+                    'border-left': '14px solid rgba(0, 0, 0, 0.5)',
+                    'position': 'absolute',
+                    'left': '26px',
+                    
+                  }
+                });
+            }
+</script>
+
 <div class="container">
 	<h2 class="text-center"> Sinais</h2>
 	<?php if (isset($_SESSION['logado']) and ($_SESSION['logado']['tipo'] != 'admin')) : ?>
@@ -13,9 +40,9 @@
 			<?php foreach ($palavras as $palavra) : ?>
 				<div class="col-lg-4 col-sm-12 col-md-6 portfolio-item">
 					<div class="card h-100">
-						<img class="card-img-top temas"  id="sinal" data-gifffer-width="100%" data-gifffer="<?=$palavra['imagembr']?>" alt="sinal_<?= $palavra['titulobr'] ?>">
+						<img class="card-img-top temas"  data-gifffer-width="100%" data-gifffer="<?=$palavra['imagembr']?>" alt="sinal_<?= $palavra['titulobr'] ?>">
 						<?php if(isset($_SESSION['logado']) and ($_SESSION['logado']['tipo']) == 'admin') : ?>
-						<a> <img src="./publico/images/x-button.svg" height="45px" style="position: absolute; top:5px; right:5px;" class="delete" data-toggle="modal" data-target="#exampleModal<?=$palavra['idpalavra']?>"></a>
+						<a> <img src="./publico/images/x-button.svg" height="45px" style="position: absolute; top:5px; right:5px;" class="teste-icon delete" data-toggle="modal" data-target="#exampleModal<?=$palavra['idpalavra']?>"></a>
 					<?php endif; ?>
 					<div class="modal fade" id="exampleModal<?=$palavra['idpalavra']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog" role="document">
@@ -112,30 +139,3 @@
 
 <?php endif; ?>
 </div>
-
-    <script>
-    window.onload = function() {
-                Gifffer({
-                  playButtonStyles: {
-                    'width': '60px',
-                    'height': '60px',
-                    'border-radius': '30px',
-                    'background': 'rgba(0, 0, 0, 0.3)',
-                    'position': 'absolute',
-                    'top': '50%',
-                    'left': '50%',
-                    'margin': '-30px 0 0 -30px'
-                  },
-                  playButtonIconStyles: {
-                    'width': '0',
-                    'height': '0',
-                    'border-top': '14px solid transparent',
-                    'border-bottom': '14px solid transparent',
-                    'border-left': '14px solid rgba(0, 0, 0, 0.5)',
-                    'position': 'absolute',
-                    'left': '26px',
-                    'top'key: "value",  '16px'
-                  }
-                });
-            }
-</script>

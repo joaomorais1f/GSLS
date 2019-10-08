@@ -3,6 +3,7 @@
 require "modelo/palavraModelo.php";
 require "./servico/uploadServico.php";
 require './servico/validacaoServico.php';
+require_once 'modelo/comentarioModelo.php';
 require_once './biblioteca/uteis.php';
 
 function index($idPai = 0) {
@@ -18,12 +19,6 @@ function index($idPai = 0) {
 	$dados['tipo'] = $tipo;
 	$dados['idpai'] = $idPai;
 	exibir("palavra/listar", $dados);
-}
-
-function adicionarTema() {
-	$dados["tipo"] = 1;
-	$dados["idpai"] = 0;	
-	exibir("palavra/form", $dados);
 }
 
 function salvar() {
@@ -61,6 +56,8 @@ function frase ($idPalavra) {
 
 	$dados["palavrasDoMesmoTema"] = $palavrasDoMesmoTema;
 
+	$comentario_palavra = pegarComentarioPorIdPalavra($idPalavra);
+	$dados["comentarios"] = $comentario_palavra;
 	$palavraPai = pegarPalavraPorId($idpai);
 	$dados['palavraPai'] = $palavraPai;
 	
@@ -70,4 +67,42 @@ function frase ($idPalavra) {
 function delete ($idpalavra) {
 	deletarPalavra($idpalavra);
 	redirecionar('palavra/index');
+}
+
+function comentario () {
+	$idusuario = $_SESSION['logado']['idusuario'];
+	$idpalavra = $_POST["idpalavra"];
+	$comentario = $_POST["comentario"];
+	$comentarios = comentar($idusuario,$idpalavra,$comentario);
+	$comentario_palavra = pegarComentarioPorIdPalavra($idpalavra);
+	$palavra = pegarPalavraPorId($idpalavra);
+	$dados["palavra"] = $palavra;
+
+	$idpai = $palavra["idpai"];
+	$palavrasDoMesmoTema = pegarTodasAsPalavrasPorIdPai($idpai);
+
+
+	$dados["palavrasDoMesmoTema"] = $palavrasDoMesmoTema;
+
+	$palavraPai = pegarPalavraPorId($idpai);
+	$dados['palavraPai'] = $palavraPai;
+	$dados["comentarios"] = $comentario_palavra;
+	exibir("palavra/frases",$dados);
+}
+
+function ExcluirComentario ($idcomentario) {
+	$todos_comentarios_por_id = PegarComentarioPorId($idcomentario);
+	$comentario_palavra = pegarComentarioPorIdPalavra($todos_comentarios_por_id[0]['idpalavra']);
+	mm($todos_comentarios_por_id);
+	$palavra = pegarPalavraPorId($todos_comentarios_por_id['idpalavra']);
+	$idpai = $palavra["idpai"];
+	$palavrasDoMesmoTema = pegarTodasAsPalavrasPorIdPai($idpai);
+	$dados["palavra"] = $palavra;
+	$dados["palavrasDoMesmoTema"] = $palavrasDoMesmoTema;
+
+	$palavraPai = pegarPalavraPorId($idpai);
+	$dados['palavraPai'] = $palavraPai;
+	$dados["comentarios"] = $comentario_palavra;
+	$comentarios = ExcluirComentarioPorId($idcomentario);
+	exibir("palavra/frases",$dados);	
 }

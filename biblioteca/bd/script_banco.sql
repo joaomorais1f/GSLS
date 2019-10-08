@@ -37,3 +37,12 @@ CREATE TABLE palavra (
 	FOREIGN KEY (idtipo) REFERENCES tipo(idtipo) 
 );
 
+CREATE TABLE comentario (
+	idcomentario INT AUTO_INCREMENT,
+	idusuario INT NOT NULL,
+	idpalavra INT NOT NULL,
+	comentario VARCHAR(500),
+	PRIMARY KEY (idcomentario),
+	FOREIGN KEY (idusuario) REFERENCES usuario(idusuario),
+	FOREIGN KEY (idpalavra) REFERENCES palavra(idpalavra)
+);
