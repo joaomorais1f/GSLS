@@ -10,24 +10,24 @@ if (isset($_SESSION['logado'])) {
 } ?>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark  fixed-top" style="background-color: #09395eff;">
     <div class="container">
-        <a class="navbar-brand" href="">Guia de Sobrevivência de Língua de Sinais</a>
+        <a class="navbar-brand" id="titulo_cabecalho" href="">Guia de Sobrevivência em Língua de Sinais</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#gsls">O que é o GSLS</a>
+                    <a class="nav-link cabecalho" href="#gsls">O que é o GSLS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#quem">Quem Somos?</a>
+                    <a class="nav-link cabecalho" href="#quem">Quem Somos?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="palavra">Sinais</a>
+                    <a class="nav-link cabecalho" href="palavra">Sinais</a>
                 </li>
                 <?php if (!isset($_SESSION['logado'])) { ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="usuario/adicionar">Entre ou Cadastre-se</a>
+                    <a class="nav-link cabecalho" href="usuario/adicionar">Entre ou Cadastre-se</a>
                 </li>
                 <?php } else { ?>
                 <li class="nav-item">

@@ -1,6 +1,7 @@
 <?php
 
 require "modelo/palavraModelo.php";
+require "modelo/usuarioModelo.php";
 require "./servico/uploadServico.php";
 require './servico/validacaoServico.php';
 require_once 'modelo/comentarioModelo.php';
@@ -45,7 +46,8 @@ function salvar() {
 
 function frase ($idPalavra) {
 	//echo $idpai;
-	
+	$todos_usuarios = pegarTodosUsuarios();
+	$dados['todos_usuarios'] = $todos_usuarios;
 	
 	$palavra = pegarPalavraPorId($idPalavra);
 	$dados["palavra"] = $palavra;
@@ -77,10 +79,12 @@ function comentario () {
 	$comentario_palavra = pegarComentarioPorIdPalavra($idpalavra);
 	$palavra = pegarPalavraPorId($idpalavra);
 	$dados["palavra"] = $palavra;
-
 	$idpai = $palavra["idpai"];
 	$palavrasDoMesmoTema = pegarTodasAsPalavrasPorIdPai($idpai);
-
+	
+	$todos_usuarios = pegarTodosUsuarios();
+	$dados['todos_usuarios'] = $todos_usuarios;
+	
 
 	$dados["palavrasDoMesmoTema"] = $palavrasDoMesmoTema;
 
@@ -103,6 +107,8 @@ function ExcluirComentario ($idcomentario) {
 	$dados['palavraPai'] = $palavraPai;
 	$comentarios = ExcluirComentarioPorId($idcomentario);
 	$comentario_palavra = pegarComentarioPorIdPalavra($todos_comentarios_por_id['idpalavra']);
+	$todos_usuarios = pegarTodosUsuarios();
+	$dados['todos_usuarios'] = $todos_usuarios;
 	$dados["comentarios"] = $comentario_palavra;
 	exibir("palavra/frases",$dados);	
 }

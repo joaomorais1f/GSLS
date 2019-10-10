@@ -27,7 +27,7 @@
 
 <div class="container">
 	<h2 class="text-center"> Sinais</h2>
-	<?php if (isset($_SESSION['logado']) and ($_SESSION['logado']['tipo'] != 'admin')) : ?>
+	<?php if (!isset($_SESSION['logado'])) : ?>
 	<div class="alert alert-success mx-auto aviso" role="alert">
 		<h4 class="alert-heading text-center">Bem vindo</h4>
 		<p class="text-center">Para realizar comentários sobre os sinais da plataforma, é preciso se cadastrar, <a href="usuario/adicionar">clique aqui</a> e realize seu cadastro</p>
@@ -127,7 +127,7 @@
 						<textarea class="form-control" placeholder="Descrição em Inglês (Description in English) " name="descrien"></textarea>
 					</div>
 					<p class="erro text-center">
-						<?= @verificarErro($erros, 'descrien') ?>
+						<?=@verificarErro($erros, 'descrien') ?>
 					</p>
 					<div class="form-group">
 						<button type="submit" class="btnSubmit Adicionar_Tema"> ADICIONAR </button>
