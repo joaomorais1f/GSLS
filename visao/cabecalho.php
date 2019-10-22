@@ -30,14 +30,14 @@ if (isset($_SESSION['logado'])) {
                     <a class="nav-link cabecalho" href="usuario/adicionar">Entre ou Cadastre-se</a>
                 </li>
                 <?php } else { ?>
-                <li class="nav-item">
+                <li class="nav-item pl-2">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle cabecalho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Olá, <?=ucfirst($nome[0]); ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Conta</a>
-                            <a class="dropdown-item" href="login/logout">Sair</a>
+                            <a class="dropdown-item cabecalho" href="#">Conta</a>
+                            <a class="dropdown-item cabecalho" href="login/logout">Sair</a>
                             <!--<a class="dropdown-item" href="#">Something else here</a> -->
                         </div>
                     </div>

@@ -26,11 +26,11 @@
 </script>
 
 <div class="container">
-	<h2 class="text-center"> Sinais</h2>
+	<h2 class="text-center m-4 title titulo"> Sinais</h2>
 	<?php if (!isset($_SESSION['logado'])) : ?>
-	<div class="alert alert-success mx-auto aviso" role="alert">
-		<h4 class="alert-heading text-center">Bem vindo</h4>
-		<p class="text-center">Para realizar comentários sobre os sinais da plataforma, é preciso se cadastrar, <a href="usuario/adicionar">clique aqui</a> e realize seu cadastro</p>
+	<div class="alert alert-success mx-auto aviso cabecalho" role="alert">
+		<h4 class="alert-heading text-center cabecalho">Bem vindo</h4>
+		<p class="text-center cabecalho">Para realizar comentários sobre os sinais da plataforma, é preciso se cadastrar, <a href="usuario/adicionar">clique aqui</a> e realize seu cadastro</p>
 		<hr>
 	</div>
 <?php endif; ?>
@@ -39,8 +39,12 @@
 		<?php if (isset($palavras)) : ?>
 			<?php foreach ($palavras as $palavra) : ?>
 				<div class="col-lg-4 col-sm-12 col-md-6 portfolio-item">
-					<div class="card h-100">
-						<img class="card-img-top temas"  data-gifffer-width="100%" data-gifffer="<?=$palavra['imagembr']?>" alt="sinal_<?= $palavra['titulobr'] ?>">
+					<div class="card h-150">
+						<?php if($palavra['idtipo'] == 3) : ?>
+						<img class="card-img-top temas"  data-gifffer-width="100%" data-gifffer="<?=$palavra['imagembr']?>" alt="sinal_<?= $palavra['titulobr'] ?>" style="height: 100px;">
+						<?php else: ?>
+							<img class="card-img-top temas" width="100%" src="<?=$palavra['imagembr']?>" alt="sinal_<?= $palavra['titulobr'] ?>" style="height: 150px;">
+						<?php endif; ?>
 						<?php if(isset($_SESSION['logado']) and ($_SESSION['logado']['tipo']) == 'admin') : ?>
 						<a> <img src="./publico/images/x-button.svg" height="45px" style="position: absolute; top:5px; right:5px;" class="teste-icon delete" data-toggle="modal" data-target="#exampleModal<?=$palavra['idpalavra']?>"></a>
 					<?php endif; ?>
@@ -48,19 +52,19 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Excluir Permanentemente o Sinal</h5>
+									<h5 class="modal-title cabecalho" id="exampleModalLabel">Excluir Permanentemente o Sinal</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
+								<div class="modal-body cabecalho">
 									Você tem certeza que deseja excluir o sinal <strong><?=$palavra['titulobr']?></strong>?
 								</div>
 								<div class="modal-footer">
 
-									<a href="palavra/delete/<?= $palavra['idpalavra']?>" class="btn btn-danger">Excluir</a>
+									<a href="palavra/delete/<?= $palavra['idpalavra']?>" class="btn btn-danger cabecalho">Excluir</a>
 									
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+									<button type="button" class="btn btn-secondary cabecalho" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
@@ -69,12 +73,12 @@
 					<div class="card-body">
 						<h4 class="card-title">
 							<?php if ($palavra['idtipo'] == 3) : ?>
-								<a href="./palavra/frase/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?> </a>
+								<a class="titulo title" href="./palavra/frase/<?=$palavra['idpalavra']?>"><?=$palavra['titulobr']?> </a>
 								<?php else : ?>
-									<a href="./palavra/index/<?= $palavra['idpalavra'] ?>"><?= $palavra['titulobr']?></a>
+									<a class="titulo title" href="./palavra/index/<?= $palavra['idpalavra'] ?>"><?= $palavra['titulobr']?></a>
 								<?php endif; ?>
 							</h4>
-							<p class="card-text"><?=$palavra['describr']?></p>
+							<p class="card-text cabecalho"><?=$palavra['describr']?></p>
 
 						</div>
 					</div>
@@ -89,7 +93,7 @@
 			<!--<img class="card-img-top" src="images/temas/img6.jpg" alt=""> -->
 			<div class="card-body">
 				<form method="POST" action="./palavra/salvar" enctype="multipart/form-data">
-					<label for="imagem_tema"> Clique para inserir o Gif em LIBRAS </label>
+					<label class="" for="imagem_tema"> Clique para inserir o Gif em LIBRAS </label>
 					<input type="file" name="imagembr" id="imagem_tema">
 					<p class="erro text-center">
 						<?= @verificarErro($erros, 'imagembr') ?>
@@ -118,10 +122,10 @@
 						<?= @verificarErro($erros, 'tituloen') ?>
 					</p>
 					<div class="form-group">
-						<input placeholder="idtipo" class="form-control" id="idtipo" type="hidden" name="idtipo" value="<?= $tipo ?>">
+						<input placeholder="idtipo" class="form-control cabecalho" id="idtipo" type="hidden" name="idtipo" value="<?= $tipo ?>">
 					</div>
 					<div class="form-group">
-						<input placeholder="idpai:" class="form-control" id="idpai" type="hidden" name="idpai" value="<?= $idpai ?>">
+						<input placeholder="idpai:" class="form-control cabecalho" id="idpai" type="hidden" name="idpai" value="<?= $idpai ?>">
 					</div>
 					<div class="form-group">
 						<textarea class="form-control" placeholder="Descrição em Inglês (Description in English) " name="descrien"></textarea>
@@ -130,7 +134,7 @@
 						<?=@verificarErro($erros, 'descrien') ?>
 					</p>
 					<div class="form-group">
-						<button type="submit" class="btnSubmit Adicionar_Tema"> ADICIONAR </button>
+						<button type="submit" class="btnSubmit Adicionar_Tema cabecalho"> ADICIONAR </button>
 					</div>
 				</form>
 			</div>

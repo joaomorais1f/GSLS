@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Grenze&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Grenze|Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins|Quicksand&display=swap');
+
 
 .login-container{
     margin-top: 5%;
@@ -78,8 +80,8 @@ input[type="file"] {
 }
 
 .temas {
-    min-height: 300px;
-    max-height: 300px;
+    min-height: 350px;
+    max-height: 350px;
 }
 .pause-icon {
     height:45px;
@@ -127,4 +129,13 @@ input[type="file"] {
     font-family: 'Grenze', serif;
     font-family: 'Quicksand', sans-serif;
     
+}
+
+.titulo {
+    color:#09395eff;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.title {
+    font-weight: bold;
 }
