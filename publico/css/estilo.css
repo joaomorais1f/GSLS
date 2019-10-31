@@ -139,3 +139,20 @@ input[type="file"] {
 .title {
     font-weight: bold;
 }
+
+@media (max-width: 991px) {
+    .img-home {
+        padding-left: 20%;
+    }
+}
+
+@media (max-width: 767px) {
+    .img-home {
+        position: relative;
+        right:11%;
+    }
+    .sign_title {
+        padding-top:40px;
+    }
+}
+

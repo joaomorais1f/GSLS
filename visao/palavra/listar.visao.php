@@ -26,7 +26,7 @@
 </script>
 
 <div class="container">
-	<h2 class="text-center m-4 title titulo"> Sinais</h2>
+	<h2 class="text-center m-4 title titulo sign_title"> Sinais</h2>
 	<?php if (!isset($_SESSION['logado'])) : ?>
 	<div class="alert alert-success mx-auto aviso cabecalho" role="alert">
 		<h4 class="alert-heading text-center cabecalho">Bem vindo</h4>
@@ -88,7 +88,7 @@
 		<?php endif; ?>
 	</div>
 	<?php if (isset($_SESSION['logado']) and ($_SESSION['logado']['tipo'] == 'admin')) : ?>
-	<div class="col-lg-4 col-sm-12 portfolio-item">
+	<div class="col-lg-4 col-sm-12 col-md-6 portfolio-item">
 		<div class="card h-70">
 			<!--<img class="card-img-top" src="images/temas/img6.jpg" alt=""> -->
 			<div class="card-body">

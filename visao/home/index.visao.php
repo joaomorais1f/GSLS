@@ -7,21 +7,21 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active" style="background-image: url('./publico/images/mapas.png')">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption">
             <a href="palavra">
               <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('./publico/images/a.png')">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption">
             <a href="palavra">
               <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
           </div>
         </div>
         <div class="carousel-item" style="background-image: url('./publico/images/pepe.jpg')">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption">
             <a href="palavra">
               <h3> <button class="btn btn-secondary">COMECE A APRENDER</button></h3>
             </a>
@@ -49,22 +49,21 @@
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="portuguese" role="tabpanel" aria-labelledby="portuguese-tab">
-        <h2 id="gsls" class="text-center"> GSLS</h2>
+        <h2 id="gsls" class="text-center text-white"> GSLS</h2>
         <div class="row" style="padding: 2%">
-          <div class="col-lg-6">
-            <img class="img-fluid rounded mb-4" src="./publico/images/img-01.png" alt="">
+          <div class="col-lg-6 mx-auto">
+            <img class="img-fluid rounded mb-4 img-home" src="./publico/images/img-01.png" alt="">
           </div>
           <div class="col-lg-6">
             <h2 class="text-center cabecalho">Guia de Sobrevivência em Língua de Sinais</h2>
             <p class="text-justify cabecalho"> O nosso guia de sobrevivência em língua de sinais, que atua como um tradutor de língua de sinais brasileira para americana, foi um projeto desenvolvido com um intuito integrador. O site foi, inicialmente, pensado para preparar uma pessoa desacompanhada no momento em que se viaje à outro país, não exista dificuldade dentre as ações do seu dia a dia com relação à comunicação. A ferramenta inclui desde pessoas que não possuem conhecimento algum da regionalização dentro da língua, até pessoas que procuram um ensinamento específico para a mesma desde que conheça língua de sinais brasileira. </p>
             <p class="text-justify cabecalho"> O GLSL é especificamente sobre a língua de sinais da América do Norte com frases básicas e cotidianas como projeto inicial, porém esperamos com o tempo ampliar para outras línguas trazendo a maneira de falar adaptada aos costumes do país e frases mais complexas.</p>
-
           </div>
         </div>
         <h2 class="text-center cabecalho">Equipe</h2>
 
         <div class="row">
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/pedro.jpg" alt="" style="height:325px;">
               <div class="card-body">
@@ -77,7 +76,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/giovanna.jpg" alt="" style="height:325px;">
               <div class="card-body">
@@ -90,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/joao.jpg" alt="" style="height:325px;">
               <div class="card-body">
@@ -105,7 +104,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-6 d-none d-lg-block d-xl-block">
             <img class="img-fluid rounded mb-4 col-md-auto" src="./publico/images/img-01.png" alt="logo do projeto">
           </div>
           <div class="col-lg-6">
@@ -117,22 +116,21 @@
         </div>
       </div>
       <div class="tab-pane fade" id="english" role="tabpanel" aria-labelledby="english-tab">
-        <h2 id="gsls" class="text-center cabecalho"> GSLS</h2>
+        <h2 id="gsls" class="text-center cabecalho text-white"> GSLS</h2>
         <div class="row" style="padding: 2%">
           <div class="col-lg-6">
-            <img class="img-fluid rounded mb-4" src="./publico/images/img-01.png" alt="">
+            <img class="img-fluid rounded mb-4 img-home" src="./publico/images/img-01.png" alt="">
           </div>
           <div class="col-lg-6">
             <h2 class="text-center cabecalho">Guia de Sobrevivencia de Sinais(ingles)</h2>
             <p class="text-justify cabecalho"> O nosso guia de sobrevivência em língua de sinais, que atua como um tradutor de língua de sinais brasileira para americana, foi um projeto desenvolvido com um intuito integrador. O site foi, inicialmente, pensado para preparar uma pessoa desacompanhada no momento em que se viaje à outro país, não exista dificuldade dentre as ações do seu dia a dia com relação à comunicação. A ferramenta inclui desde pessoas que não possuem conhecimento algum da regionalização dentro da língua, até pessoas que procuram um ensinamento específico para a mesma desde que conheça língua de sinais brasileira. </p>
             <p class="text-justify cabecalho"> O GLSL é especificamente sobre a língua de sinais da América do Norte com frases básicas e cotidianas como projeto inicial, porém esperamos com o tempo ampliar para outras línguas trazendo a maneira de falar adaptada aos costumes do país e frases mais complexas.</p>
-
           </div>
         </div>
         <h2 class="text-center cabecalho">Team</h2>
 
         <div class="row">
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/pedro.jpg" alt="">
               <div class="card-body">
@@ -145,7 +143,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/giovanna.jpg" alt="">
               <div class="card-body">
@@ -158,7 +156,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100 text-center">
               <img class="card-img-top" src="./publico/images/equipe/joao.jpg" alt="">
               <div class="card-body">
@@ -173,8 +171,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-6">
-            <img class="img-fluid rounded mb-4 col-md-auto" src="./publico/images/img-01.png" alt="logo do projeto">
+          <div class="col-lg-6 d-none d-lg-block d-xl-block">
+            <img class="img-fluid rounded mb-4" src="./publico/images/img-01.png" alt="logo do projeto">
           </div>
           <div class="col-lg-6">
             <h2 class="text-center cabecalho" id="quem">Who are we?</h2>

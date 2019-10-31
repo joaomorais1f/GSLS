@@ -3,16 +3,15 @@
 <head>
     <title>GSLS</title>
     <base href="<?= URL_BASE ?>">
-    <!--Esta instrução é super importante e não deve ser mudada!-->
+    <link rel="shortcut icon" href="./publico/images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!--<link rel="stylesheet" href="./publico/css/app.css">  -->
     <link rel="stylesheet" href="./publico/css/bootstrap.css">
     <link rel="stylesheet" href="./publico/css/estilo.css">
     <link rel="stylesheet" href="./publico/css/all-animation.css">
     <link rel="stylesheet" href="./publico/css/carousel.css">
-    <!-- <link rel="stylesheet" href="netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 </head>
 
 <body class="d-flex flex-column" id="teste">
