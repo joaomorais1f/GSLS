@@ -30,7 +30,7 @@
 	<?php if (!isset($_SESSION['logado'])) : ?>
 	<div class="alert alert-success mx-auto aviso cabecalho" role="alert">
 		<h4 class="alert-heading text-center cabecalho">Bem vindo</h4>
-		<p class="text-center cabecalho">Para realizar comentários sobre os sinais da plataforma, é preciso se cadastrar, <a href="usuario/adicionar">clique aqui</a> e realize seu cadastro</p>
+		<p class="text-center cabecalho text-justify">Para realizar comentários sobre os sinais da plataforma, é preciso se cadastrar, <a href="usuario/adicionar">clique aqui</a> e realize seu cadastro</p>
 		<hr>
 	</div>
 <?php endif; ?>

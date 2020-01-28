@@ -36,7 +36,7 @@ if (isset($_SESSION['logado'])) {
                             Olá, <?=ucfirst($nome[0]); ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item cabecalho" href="#">Conta</a>
+                            <a class="dropdown-item cabecalho" href="conta">Conta</a>
                             <a class="dropdown-item cabecalho" href="login/logout">Sair</a>
                             <!--<a class="dropdown-item" href="#">Something else here</a> -->
                         </div>

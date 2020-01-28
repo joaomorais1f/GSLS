@@ -13,26 +13,25 @@
                      <input name="nome" type="text" class="form-control" placeholder="Nome Completo *" value="">
                  </div>
                  <p class="erro text-center">
-                     <?=@verificarErro($erros, 'nome')?>
+                     <?= @verificarErro($erros, 'nome') ?>
                  </p>
                  <div class="form-group">
                      <input name="email" type="text" class="form-control" placeholder="Email *" value="">
                  </div>
                  <p class="erro text-center">
 
-                     <?=@verificarErro($erros, 'email')?>
+                     <?= @verificarErro($erros, 'email') ?>
 
                  </p>
                  <div class="form-group">
                      <input name="senha" type="password" class="form-control" placeholder="Senha *" value="">
                  </div>
                  <p class="erro text-center">
-                     <?=@verificarErro($erros, 'senha')?>
+                     <?= @verificarErro($erros, 'senha') ?>
                  </p>
-                 <center>
-                     <div class="form-group">
-                         <span style="color: white;"> Ouvinte:</span>
-                         <br>
+                 <div class="pl-4">
+                     <div class="form-group pl-5">
+                         <span class="text-white m-2"> Ouvinte:</span>   
                          <div class="form-check form-check-inline">
                              <input name="ouvinte" class="form-check-input" id="inlineRadio1" type="radio" value="S">
                              <label class="form-check-label" for="inlineRadio1" style="color: white;">Sim</label>
@@ -42,9 +41,9 @@
                              <label class="form-check-label" for="inlineRadio2" style="color: white;">Não</label>
                          </div>
                      </div>
-                 </center>
+                </div>
                  <p class="erro text-center">
-<?=@verificarErro($erros,'ouvinte')?>
+                     <?= @verificarErro($erros, 'ouvinte') ?>
                  </p>
                  <div class="form-group">
                      <button type="submit" class="btnSubmit Cadastro"> CADASTRAR</button>
@@ -53,7 +52,7 @@
 
          </div>
          <div class="col-md-6 login-form-2">
-             <div class="login-logo">
+             <div class="login-logo d-sm-none d-md-block">
                  <img src="./publico/images/mao.png" id="login_image" alt="" data-toggle="modal" data-target="#modalExemplo">
                  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog" role="document">
@@ -65,7 +64,7 @@
                                  </button>
                              </div>
                              <div class="modal-body">
-                                 ...
+
                              </div>
                          </div>
                      </div>

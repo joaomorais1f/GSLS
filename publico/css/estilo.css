@@ -15,7 +15,7 @@
 .login-logo img{
     position: absolute;
     width: 20%;
-    margin-top: 19%;
+    margin-top: 20%;
     background: #282726;
     border-radius: 4.5rem;
     /*padding: 5%; */
@@ -61,7 +61,7 @@
     color:#fff;
 }
 
-/* external css: flickity.css */
+
 .erro {
     color:red;
 }
@@ -105,7 +105,6 @@ input[type="file"] {
     right:5px;
     z-index:200;
     transition: all 0.4s ease;
-
 }
 
 .delete:hover {
@@ -154,5 +153,29 @@ input[type="file"] {
     .sign_title {
         padding-top:40px;
     }
+    .login-form-1 {
+        margin-top:10%;
+    }
+
 }
 
+@media (min-width: 991px) {
+    #titulo_cabecalho {
+        font-size: 1.7rem;
+    }
+}
+@media (max-width:530px) {
+    #titulo_cabecalho {
+        font-size: 1.4rem;
+    }
+}
+
+.Entrar {
+    background:white;
+    color:black;
+    cursor:pointer;
+}
+
+.button-href a:link, a:hover{
+    text-decoration:none;
+}
