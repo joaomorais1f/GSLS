@@ -7,6 +7,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
 .login-logo{
     position: relative;
     margin-left: -41.5%;
@@ -60,7 +61,6 @@
     text-decoration:none;
     color:#fff;
 }
-
 
 .erro {
     color:red;
@@ -127,7 +127,6 @@ input[type="file"] {
 .cabecalho {
     font-family: 'Grenze', serif;
     font-family: 'Quicksand', sans-serif;
-    
 }
 
 .titulo {
@@ -156,9 +155,11 @@ input[type="file"] {
     .login-form-1 {
         margin-top:10%;
     }
+    .dados {
+        margin-top:15% !important;
 
+    }
 }
-
 @media (min-width: 991px) {
     #titulo_cabecalho {
         font-size: 1.7rem;
@@ -168,8 +169,16 @@ input[type="file"] {
     #titulo_cabecalho {
         font-size: 1.4rem;
     }
+    .dados {
+        margin-top:5% !important;
+    }
 }
 
+@media (min-width: 459px) {
+    .dados {
+        margin-top: 5%;
+    }
+}
 .Entrar {
     background:white;
     color:black;
@@ -178,4 +187,8 @@ input[type="file"] {
 
 .button-href a:link, a:hover{
     text-decoration:none;
+}
+
+.dados {
+    margin: 5% auto ;
 }

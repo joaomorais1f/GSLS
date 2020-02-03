@@ -1,6 +1,4 @@
-<!--Para incluir o cabeçalho no seu site você precisa realizar a requisição deste arquivo `template.php`-->
 <?php
-
 if (isset($_SESSION['logado'])) {
     //session_destroy();
     $nome_completo = $_SESSION['logado']['nome'];

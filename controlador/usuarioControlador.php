@@ -3,6 +3,7 @@
 require_once "modelo/usuarioModelo.php";
 require './servico/validacaoServico.php';
 require './biblioteca/alert.php';
+
 function index() {
     $dados["usuarios"] = pegarTodosUsuarios();
     exibir("usuario/listar", $dados);
@@ -30,7 +31,7 @@ function adicionar() {
 
 function deletar($id) {
     alert(deletarUsuario($id));
-    redirecionar("usuario/index");
+    redirecionar("home");
 }
 
 function editar($id) {
