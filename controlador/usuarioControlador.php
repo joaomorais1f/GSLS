@@ -1,7 +1,6 @@
 <?php
-
 require_once "modelo/usuarioModelo.php";
-require './servico/validacaoServico.php';
+require "./servico/validacaoServico.php";
 require './biblioteca/alert.php';
 
 function index() {
@@ -18,7 +17,9 @@ function adicionar() {
         $erros = validacao($nome, $email, $senha, $ouvinte);
         if (empty($erros)) {
             alert(adicionarUsuario($nome,$email,$senha, $ouvinte,'user'));
-            exibir("usuario/formulario");
+            //exibir("usuario/formulario");
+            $_SESSION['logado'] = pegarUsuarioPorEmailSenha($email, $senha);
+            redirecionar("home");
         } else {
             $dados["erros"] = $erros;
             exibir("usuario/formulario", $dados);

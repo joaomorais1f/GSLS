@@ -21,7 +21,7 @@
     </main>
     <?php require 'rodape.php'; ?>
 
-    <script src="./publico/js/jquery.min.js"></script>
+    <script src="./publico/js/jquery-3.4.1.min.js"></script>
     <script src="./publico/js/bootstrap.bundle.min.js"></script>
     <script src="./publico/js/scroll.js"> </script>
     <script src="./publico/js/gifffer.min.js"> </script>

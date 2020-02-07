@@ -8,7 +8,7 @@
      <div class="row">
          <div class="col-md-6 login-form-1">
              <h3>Cadastre-se</h3>
-             <form action="" method="POST">
+             <form action="usuario/adicionar" method="POST">
                  <div class="form-group">
                      <input name="nome" type="text" class="form-control" placeholder="Nome Completo *" value="">
                  </div>

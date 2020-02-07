@@ -17,6 +17,7 @@ function dados () {
 
 function delete ($id) {
    deletarUsuario($id);
+   ExcluirComentarioPorIdPessoa(7);
    unset($_SESSION['logado']);
    redirecionar("home");
 }

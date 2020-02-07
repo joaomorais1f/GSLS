@@ -18,7 +18,6 @@
                  </div>
              </form>
              <div class="form-group">
-                
                  <a href="conta/delete/<?= $_SESSION['logado']['idusuario'] ?>" class="col-12 btn btn-danger button-href text-center" data-toggle="modal" data-target="#exampleModal"> EXCLUIR CONTA </a>
              </div>
          </div>
@@ -32,7 +31,7 @@
                          </button>
                      </div>
                      <div class="modal-body cabecalho">
-                         Você tem certeza que deseja excluir sua conta?</strong>?
+                         Você tem certeza que deseja excluir sua conta?
                      </div>
                      <div class="modal-footer">
                          <a href="conta/delete/<?= $_SESSION['logado']['idusuario'] ?>" class="btn btn-danger button-href text-center"> EXCLUIR CONTA </a>

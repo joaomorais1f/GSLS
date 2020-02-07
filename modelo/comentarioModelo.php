@@ -31,3 +31,10 @@ function PegarComentarioPorId ($idcomentario) {
     $comentario = mysqli_fetch_assoc($resultado);
     return $comentario;
 }
+
+function ExcluirComentarioPorIdPessoa($idusuario) {
+    $sql = "DELETE FROM comentario WHERE idusuario = '$idusuario'";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if (!$resultado) {die('Erro ao excluir comentario '.mysqli_error($cnx)); }
+    return 'comentários excluídos com sucesso';
+}
