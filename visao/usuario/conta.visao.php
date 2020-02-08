@@ -34,7 +34,7 @@
                          Você tem certeza que deseja excluir sua conta?
                      </div>
                      <div class="modal-footer">
-                         <a href="conta/delete/<?= $_SESSION['logado']['idusuario'] ?>" class="btn btn-danger button-href text-center"> EXCLUIR CONTA </a>
+                         <a href="conta/delete/<?= $_SESSION['logado']['idusuario'] ?>" class="btn btn-danger button-href text-center cabecalho"> Excluir Conta </a>
                          <button type="button" class="btn btn-secondary cabecalho" data-dismiss="modal">Fechar</button>
                      </div>
                  </div>

@@ -3,7 +3,7 @@
 <head>
     <title>GSLS</title>
     <base href="<?= URL_BASE ?>">
-    <link rel="shortcut icon" href="./publico/images/logo.png">
+    <link rel="shortcut icon" href="./publico/images/small_hand.png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
