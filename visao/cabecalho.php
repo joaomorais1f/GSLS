@@ -30,7 +30,7 @@ if (isset($_SESSION['logado'])) {
             <?php } else { ?>
                 <li class="nav-item pl-2">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle cabecalho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn button-style dropdown-toggle cabecalho" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Olá, <?= ucfirst($nome[0]); ?>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

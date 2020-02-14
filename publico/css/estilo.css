@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Grenze&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Grenze|Quicksand&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Poppins|Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
 
 
 .login-container{
@@ -15,15 +16,17 @@
 } 
 .login-logo img{
     position: absolute;
-    width: 20%;
-    margin-top: 20%;
+    width: 30%;
+	margin-left:-5%;
+    margin-top: 18%;
+	margin-right:20%;
     background: #282726;
-    border-radius: 4.5rem;
+    border-radius: 10rem;
     /*padding: 5%; */
 }
 .login-form-1{
     padding: 9%;
-    background:#282726;
+    background:#07889B;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-1 h3{
@@ -34,7 +37,7 @@
 .login-form-2{
     padding: 9%;
     /*background: #f05837; */
-    background: #0b19db;
+    background: #66B9BF;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 .login-form-2 h3{
@@ -124,8 +127,8 @@ input[type="file"] {
 }
 
 #titulo_cabecalho {
-    font-family: 'Grenze', serif;
-    font-size:2rem;
+	font-family: 'Julius Sans One', sans-serif;
+    font-size:1.4rem !important;
 }
 
 .cabecalho {
@@ -143,6 +146,12 @@ input[type="file"] {
 }
 .img-home {
     margin-top: 6rem !important;
+}
+
+@media (max-width:576px) {
+	.login-logo img {
+		display:none;
+	}
 }
 @media (max-width: 991px) {
     .img-home {
@@ -201,4 +210,10 @@ input[type="file"] {
 
 .secao {
     margin-top:5rem !important;
+}
+
+.button-style {
+	background-color: #07889B !important;
+	color:white;
+	
 }

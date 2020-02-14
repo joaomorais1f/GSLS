@@ -53,7 +53,7 @@
          </div>
          <div class="col-md-6 login-form-2">
              <div class="login-logo d-sm-none d-md-block">
-                 <img src="./publico/images/mao.png" id="login_image" alt="" data-toggle="modal" data-target="#modalExemplo">
+                 <img src="./publico/images/maoBranca.png" id="login_image" alt="" data-toggle="modal" data-target="#modalExemplo">
                  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                      <div class="modal-dialog" role="document">
                          <div class="modal-content">
